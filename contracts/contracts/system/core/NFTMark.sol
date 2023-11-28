@@ -51,8 +51,8 @@ contract NFTMark is AccessControl {
         emit CancelOrder(seller,tokenId);
     } 
     function addOrder(uint256 _tokenId,uint256 _price) external {
-       require(erc721.getApproved(_tokenId) == msg.sender,"not approved");
-     erc721.transferFrom(msg.sender,address(this),_tokenId);
+       require(erc721.getApproved(_tokenId) == address(this),"not approved");
+        erc721.transferFrom(msg.sender,address(this),_tokenId);
        
        _addOrder(msg.sender,_tokenId,_price);
        emit AddOrder(msg.sender,_tokenId,_price);

@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv/config");
-// import { task } from "hardhat/config";
+/** @type import('hardhat/config').HardhatUserConfig */
+
 const { task } = require("hardhat/config");
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 /** @type import('hardhat/config').HardhatUserConfig */
